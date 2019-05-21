@@ -1,7 +1,6 @@
-import ProgressBar from 'progress'
-import { exec } from 'child-process-promise'
-import args from 'args'
-
+const ProgressBar = require("progress")
+const { exec } = require("child-process-promise")
+const args = require("args")
 const fs = require("fs-extra");
 
 args
@@ -61,7 +60,7 @@ async function hello() {
     await command('npx gitignore node ' + name)
     await command('git init ' + name)
     await command('hub create ' + name)
-    await command('yarn add gh-pages')
+    await command('yarn add --dev gh-pages')
     await command('yarn add --dev react-app-rewired customize-cra @babel/plugin-proposal-optional-chaining')
     var packageObj = await fs.readJson(pwd + '/package.json')
     await fs.copy('./config-overrides.js', pwd + '/config-overrides.js')
