@@ -60,20 +60,19 @@ async function hello() {
     await command('npx gitignore node ' + name)
     await command('git init ' + name)
     await command('hub create ' + name)
-    await command('yarn add --dev gh-pages')
-    await command('yarn add --dev react-app-rewired customize-cra @babel/plugin-proposal-optional-chaining')
     var packageObj = await fs.readJson(pwd + '/package.json')
-    await fs.copy('./config-overrides.js', pwd + '/config-overrides.js')
-    packageObj.homepage = "https://larskarbo.github.io/" + name
-    packageObj.scripts.predeploy = "yarn build"
-    packageObj.scripts.deploy = "gh-pages -d build"
-    packageObj.scripts.start = "react-app-rewired start"
-    packageObj.scripts.build = "react-app-rewired build"
-    packageObj.scripts.test = "react-app-rewired test --env=jsdom"
+    // await command('yarn add --dev react-app-rewired customize-cra @babel/plugin-proposal-optional-chaining')
+    // await fs.copy('./config-overrides.js', pwd + '/config-overrides.js')
+    // packageObj.scripts.start = "react-app-rewired start"
+    // packageObj.scripts.build = "react-app-rewired build"
+    // packageObj.scripts.test = "react-app-rewired test --env=jsdom"
+    // packageObj.homepage = "https://larskarbo.github.io/" + name
+    // packageObj.scripts.predeploy = "yarn build"
+    // packageObj.scripts.deploy = "gh-pages -d build"
     await fs.outputJson(pwd + '/package.json', packageObj)
-    await command('yarn deploy')
     await command('git ac  -m "Create a React app and publish it to GitHub Pages"')
-    await command('git push origin master')
+    // await command('yarn deploy')
+    await command('git push')
 
 }
 

@@ -1,0 +1,30 @@
+{
+    "workout_item": {
+        "name": "Squat",
+        "info": "3x5 @ 76",
+        "result": "",
+        "created_at": "2019-05-20T21:30:38.597Z",
+        "linked": false,
+        "position": 1,
+        "is_circuit": false,
+        "state": "completed",
+        "selected_exercises": [],
+        "attachments": [
+            {
+                "name": "",
+                "attachmentUrl": "https://com-thefitbot-uploadcare-data.s3.amazonaws.com/bf3d932e-00fb-4d01-b5f6-143b74074e9a/squat.mov",
+                "type": "video/quicktime",
+                "size": 84197740
+            },
+            {
+                "name": "",
+                "attachmentUrl": "https://com-thefitbot-uploadcare-data.s3.amazonaws.com/7231660d-7330-4dbb-b68e-66af2f7fcce7/blue.mp4",
+                "type": "video/mp4",
+                "size": 22100112
+            }
+        ],
+        "workout_id": "29281750",
+        "assessment_id": null,
+        "exercise_id": "42113"
+    }
+}
