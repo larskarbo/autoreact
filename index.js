@@ -1,3 +1,29 @@
+/*
+
+
+
+
+
+
+
+
+
+
+
+OLD, DONT USE
+
+use ./index.sh instead
+
+
+
+
+
+
+
+
+
+*/
+
 const ProgressBar = require("progress")
 const { exec } = require("child-process-promise")
 const args = require("args")
@@ -54,13 +80,13 @@ async function hello() {
         return quit("Folder already exists")
     }
     
-
+    return quit("use ./index.sh instead")
     await command('cd ~/dev && npx create-react-app ' + name)
     pwd = "/Users/lars/dev/"+flags.name
     await command('npx gitignore node ' + name)
     await command('git init ' + name)
     await command('hub create ' + name)
-    var packageObj = await fs.readJson(pwd + '/package.json')
+    // var packageObj = await fs.readJson(pwd + '/package.json')
     // await command('yarn add --dev react-app-rewired customize-cra @babel/plugin-proposal-optional-chaining')
     // await fs.copy('./config-overrides.js', pwd + '/config-overrides.js')
     // packageObj.scripts.start = "react-app-rewired start"
@@ -69,8 +95,9 @@ async function hello() {
     // packageObj.homepage = "https://larskarbo.github.io/" + name
     // packageObj.scripts.predeploy = "yarn build"
     // packageObj.scripts.deploy = "gh-pages -d build"
-    await fs.outputJson(pwd + '/package.json', packageObj)
-    await command('git ac  -m "Create a React app and publish it to GitHub Pages"')
+    // await fs.outputJson(pwd + '/package.json', packageObj)
+    // await command('rm -rf ./' + name)
+    await command('git ac  -m "Create a React app"')
     // await command('yarn deploy')
     await command('git push')
 
