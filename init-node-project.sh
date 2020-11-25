@@ -8,17 +8,18 @@ then
     exit
 fi
 
-
 if [ -d $DIR ] 
 then
     echo "Directory $DIR exists." 
     exit
 fi
 
-cd ~/dev && npx create-react-app $NAME
+cd ~/dev && mkdir $NAME
 cd $NAME
-npx gitignore node $NAME
+yarn init -y
+npx gitignore node
 git init
+touch index.js
 hub create $NAME
 git ac -m "Lars AUTOR INIT"
 git push
